@@ -21,7 +21,7 @@ function App() {
         <Searchbarholder />
         <Routes>
           <Route path="*" element={<Artworks />} />
-          <Route path="/details" element={<Details />} />
+          <Route path="/details/:id" element={<Details />} />
         </Routes>
         <Footer />
       </div>
