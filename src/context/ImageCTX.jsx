@@ -10,10 +10,9 @@ const ImageCTXProvider = ({ children }) => {
     const [searchObject, setSearchObject] = useState("")
     const [currentpage, setCurrentpage] = useState(1);
     const [postperpage] = useState(9);
-    const { response, isLoading, error, getData } = fetchArtworks(`
-    /api/nl/en/collection?key=${import.meta.env.VITE_REACT_APP_API_KEY}&ps=100&q=painting`);
+    const { response, isLoading, error, getData } = fetchArtworks(`/api/nl/collection?key=${import.meta.env.VITE_REACT_APP_API_KEY}&ps=100&`);
 
-    console.log(response);
+
     const indexOfLastPost = currentpage * postperpage;
     const indexOfFirstPost = indexOfLastPost - postperpage;
 

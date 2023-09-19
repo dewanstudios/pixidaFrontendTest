@@ -13,7 +13,7 @@ const Artworks = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 
                        xl:grid-cols-4 gap-4 max-w-7xl mx-auto px-4">
             {isLoading ? <LoadingBlocks item={9} /> :
-                currentPost.map((data, key) => <Art data={data} key={key} />)}
+                currentPost && currentPost.map((data, key) => <Art data={data} key={key} />)}
         </div>
         <Pagination />
     </div>;

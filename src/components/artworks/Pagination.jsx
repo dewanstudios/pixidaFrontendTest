@@ -21,7 +21,7 @@ const Pagination = () => {
                 className="mr-2 w-14 h-14 border-2 border-gray-600 shadow-2xl  hover:border-pink-600 rounded-full text-white p-3"
                 onClick={() => {
                     handlePageClick(number);
-                    paginate(number);
+                    paginate(number / 2);
                 }}
             >{number}</button></div>
         )}</div>

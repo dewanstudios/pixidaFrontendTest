@@ -7,11 +7,6 @@ import ImageCTXProvider from "./context/ImageCTX";
 import Details from "./components/artworks/Details";
 
 
-
-// create Context 
-
-
-
 function App() {
 
 

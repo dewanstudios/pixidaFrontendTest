@@ -16,7 +16,7 @@ import React, { useEffect, useState } from "react";
             setResponse(res.data.artObjects)
 
         } catch (error) {
-            setError("Error fetching Images Try Searching")
+            setError(error)
         }finally{
             setIsLoading(false)
         }
@@ -25,7 +25,7 @@ import React, { useEffect, useState } from "react";
     useEffect(()=>{
         getData(param);
     },[param])
-
+  console.log(param);
    return {
     response,
     isLoading,

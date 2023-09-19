@@ -9,9 +9,13 @@ function Search() {
         setSearchValue(e.target.value);
     }
     const handleSearch = () => {
-        getData(`/api/nl/collection?key=${import.meta.env.VITE_REACT_APP_API_KEY}&ps=100&q=${searchValue}`)
-        setSearchValue("");
-        setSearchObject(searchValue);
+        if (searchValue) {
+            getData(`/api/nl/collection?key=${import.meta.env.VITE_REACT_APP_API_KEY}&ps=100&q=${searchValue}`)
+            setSearchValue("");
+            setSearchObject(searchValue);
+        } else {
+            return alert("serach input not found")
+        }
     }
 
     const enterSearch = (e) => {
@@ -26,7 +30,7 @@ function Search() {
 
         <input type="search"
             className="bg-neutral-800 px-28 py-3 indent-0 outline-none w-full 
-             rounded-full border-2 border-gray-500 text-lg text-white"
+             rounded-full border-2 border-gray-500 text-lg text-white max-md:w-8  "
             placeholder=" Search Field ..."
             value={searchValue}
             onChange={handleInputValue}
@@ -34,7 +38,7 @@ function Search() {
         />
         <button
             disabled={!searchValue}
-            className="bg-pink-600 p-2 rounded-full px-12 text-white"
+            className="bg-pink-600 p-2 rounded-full px-12 text-white max-md:p-1"
             onClick={handleSearch}
         >Search</button>
     </div>;
